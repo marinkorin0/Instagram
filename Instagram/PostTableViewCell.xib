@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -62,11 +62,14 @@
                         </state>
                         <connections>
                             <action selector="commentButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GzT-8Z-Gom"/>
+                            <action selector="commentButton_Clicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xyg-cb-cqB"/>
                         </connections>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="kyM-84-t2z" secondAttribute="bottom" constant="10" id="0Ty-Ms-9Ik"/>
+                    <constraint firstItem="b1x-re-NiU" firstAttribute="top" secondItem="d8k-PM-nOS" secondAttribute="bottom" constant="10" id="1Wk-wO-zxD"/>
+                    <constraint firstItem="b1x-re-NiU" firstAttribute="leading" secondItem="Ay2-Mm-O7K" secondAttribute="trailing" id="3Ak-T9-uHA"/>
                     <constraint firstItem="Ay2-Mm-O7K" firstAttribute="leading" secondItem="JbC-CO-jyL" secondAttribute="trailing" constant="10" id="6mH-S8-5Zt"/>
                     <constraint firstAttribute="trailingMargin" secondItem="j1Z-CF-3dX" secondAttribute="trailing" constant="10" id="BC1-Vo-ZMN"/>
                     <constraint firstItem="j1Z-CF-3dX" firstAttribute="centerY" secondItem="Ay2-Mm-O7K" secondAttribute="centerY" id="GIu-tl-mwm"/>
@@ -74,22 +77,25 @@
                     <constraint firstItem="kyM-84-t2z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="QeR-OZ-Ms1"/>
                     <constraint firstAttribute="trailingMargin" secondItem="kyM-84-t2z" secondAttribute="trailing" constant="10" id="RAO-Th-eIa"/>
                     <constraint firstItem="d8k-PM-nOS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="SI5-BW-EfC"/>
+                    <constraint firstItem="j1Z-CF-3dX" firstAttribute="leading" secondItem="b1x-re-NiU" secondAttribute="trailing" constant="-107" id="YWR-vV-nCr"/>
                     <constraint firstItem="j1Z-CF-3dX" firstAttribute="leading" secondItem="Ay2-Mm-O7K" secondAttribute="trailing" constant="10" id="e8B-65-CVB"/>
                     <constraint firstItem="JbC-CO-jyL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="e8U-ei-qLp"/>
                     <constraint firstItem="b1x-re-NiU" firstAttribute="leading" secondItem="Ay2-Mm-O7K" secondAttribute="trailing" id="eBg-cw-oHj"/>
                     <constraint firstItem="Ay2-Mm-O7K" firstAttribute="leading" secondItem="JbC-CO-jyL" secondAttribute="trailing" constant="10" id="hy7-Bl-RMs"/>
                     <constraint firstItem="kyM-84-t2z" firstAttribute="top" secondItem="JbC-CO-jyL" secondAttribute="bottom" constant="10" id="jRr-ja-f4p"/>
+                    <constraint firstItem="b1x-re-NiU" firstAttribute="leading" secondItem="Ay2-Mm-O7K" secondAttribute="trailing" id="jZ4-1F-fza"/>
                     <constraint firstItem="b1x-re-NiU" firstAttribute="top" secondItem="d8k-PM-nOS" secondAttribute="bottom" constant="10" id="jvV-Yb-lx0"/>
                     <constraint firstAttribute="trailingMargin" secondItem="b1x-re-NiU" secondAttribute="trailing" constant="117" id="mkC-UI-QOt"/>
                     <constraint firstAttribute="trailingMargin" secondItem="d8k-PM-nOS" secondAttribute="trailing" id="n3a-wV-6a3"/>
                     <constraint firstItem="Ay2-Mm-O7K" firstAttribute="centerY" secondItem="JbC-CO-jyL" secondAttribute="centerY" id="q8D-oJ-TeZ"/>
                     <constraint firstItem="JbC-CO-jyL" firstAttribute="top" secondItem="d8k-PM-nOS" secondAttribute="bottom" constant="10" id="qmt-cg-eRZ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="b1x-re-NiU" secondAttribute="trailing" constant="117" id="r4n-K8-EJc"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="captionLabel" destination="kyM-84-t2z" id="5Sm-1b-sSq"/>
                 <outlet property="comment" destination="b1x-re-NiU" id="p86-6X-m9o"/>
-                <outlet property="commentButton" destination="b1x-re-NiU" id="NoW-eH-Dwv"/>
+                <outlet property="commentButton" destination="b1x-re-NiU" id="dmF-p9-nup"/>
                 <outlet property="dateLabel" destination="j1Z-CF-3dX" id="1BP-xY-Ze4"/>
                 <outlet property="likeButton" destination="JbC-CO-jyL" id="aTe-5w-tXc"/>
                 <outlet property="likeLabel" destination="Ay2-Mm-O7K" id="cgj-Im-AKa"/>

@@ -19,6 +19,8 @@ class PostData: NSObject {
     var date: NSDate?
     var likes: [String] = []
     var isLiked: Bool = false
+    var comment: String?//コメント用に足しましたー
+   
     
     
     //データの追加や更新があるとFIRDataSnapshotクラスとして渡す
@@ -26,7 +28,7 @@ class PostData: NSObject {
         self.id = snapshot.key
         //keyプロパティが要素自身のIDとなる
         
-        //valueプロパティーにデータが入っていてkeyとの組み合わせで辞書型になっている．keyはStringなのでvalueDictionary["name"]などの値で取り出します．
+        //さっき、postViewControllerのところで投稿と保存しました．valueプロパティーにデータが入っていてkeyとの組み合わせで辞書型になっている．keyはStringなのでvalueDictionary["name"]などの値で取り出します．
         let valueDictionary = snapshot.value as! [String: AnyObject]
         
         imageString = valueDictionary["image"] as? String
@@ -36,6 +38,9 @@ class PostData: NSObject {
         self.caption = valueDictionary["caption"] as? String
         let time = valueDictionary["time"] as? String
         self.date = NSDate(timeIntervalSinceReferenceDate: TimeInterval(time!)!)
+      
+        //コメント用に足しましたー
+        self.comment = valueDictionary["comment"]as? String
         
         
         //isLikedプロパティだけはFIRDataSnapshotから取り出すのではなくlikesでString型配列から取り出します．

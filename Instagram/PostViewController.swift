@@ -31,8 +31,9 @@ class PostViewController: UIViewController {
         // リファレンスを作成してFirebaseに保存する
         let postRef = FIRDatabase.database().reference().child(Const.PostPath)
         let postData = ["caption": textField.text!, "image": imageString, "time": String(time), "name": name!]
-        postRef.childByAutoId().setValue(postData)
         
+        postRef.childByAutoId().setValue(postData)
+       
         // HUDで投稿完了を表示する
         SVProgressHUD.showSuccess(withStatus: "投稿しました")
         

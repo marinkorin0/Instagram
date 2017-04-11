@@ -28,6 +28,7 @@
 		E49A52D41E83B4B700EE78A2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E49A52D31E83B4B700EE78A2 /* libz.tbd */; };
 		E49A52D61E83B4C500EE78A2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E49A52D51E83B4C500EE78A2 /* libc++.tbd */; };
 		E49A52DA1E83F90600EE78A2 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A52D91E83F90600EE78A2 /* Const.swift */; };
+		E49B018F1E98405C009C10C3 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B018E1E98405C009C10C3 /* CommentViewController.swift */; };
 		E49C851A1E7B5C9200C46BFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C85191E7B5C9200C46BFF /* AppDelegate.swift */; };
 		E49C851C1E7B5C9200C46BFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C851B1E7B5C9200C46BFF /* ViewController.swift */; };
 		E49C851F1E7B5C9200C46BFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49C851D1E7B5C9200C46BFF /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		E49A52D81E83BF4500EE78A2 /* Instagram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Instagram-Bridging-Header.h"; sourceTree = "<group>"; };
 		E49A52D91E83F90600EE78A2 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E49A52DB1E840F3F00EE78A2 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
+		E49B018E1E98405C009C10C3 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		E49C85161E7B5C9200C46BFF /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49C85191E7B5C9200C46BFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E49C851B1E7B5C9200C46BFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		E49C85181E7B5C9200C46BFF /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				E49B018E1E98405C009C10C3 /* CommentViewController.swift */,
 				E49A52D81E83BF4500EE78A2 /* Instagram-Bridging-Header.h */,
 				E49A52DB1E840F3F00EE78A2 /* AdobeCreativeSDKCore.framework */,
 				E49A52B91E83A89300EE78A2 /* AdobeCreativeSDKImage.framework */,
@@ -339,6 +342,7 @@
 				E48C13491E84EBB3003BF4EA /* PostTableViewCell.swift in Sources */,
 				E49C85361E7B859600C46BFF /* SettingViewController.swift in Sources */,
 				E49C85301E7B855100C46BFF /* HomeViewController.swift in Sources */,
+				E49B018F1E98405C009C10C3 /* CommentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

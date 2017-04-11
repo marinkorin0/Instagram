@@ -139,45 +139,12 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="iDw-4i-7m9" id="1ox-nk-qPu"/>
-                        <segue destination="eOd-GG-o93" kind="show" identifier="show comment page" id="62r-e6-fP0"/>
+                        <segue destination="CFr-oJ-HA9" kind="show" identifier="showCommentPage" id="RA0-4p-pOH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRr-cJ-nSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="752.79999999999995" y="6.746626686656672"/>
-        </scene>
-        <!--Comment View Controller-->
-        <scene sceneID="CjB-E7-Ewk">
-            <objects>
-                <viewController id="eOd-GG-o93" customClass="commentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CDd-NE-Be8"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ixd-s6-b1e"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9qA-6V-rQ8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gQZ-TY-ceW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="gQZ-TY-ceW" firstAttribute="top" secondItem="9qA-6V-rQ8" secondAttribute="top" id="hWP-3m-hNz"/>
-                            <constraint firstItem="Ixd-s6-b1e" firstAttribute="top" secondItem="gQZ-TY-ceW" secondAttribute="bottom" id="irF-5H-ryQ"/>
-                            <constraint firstAttribute="trailing" secondItem="gQZ-TY-ceW" secondAttribute="trailing" id="kLA-ER-UwG"/>
-                            <constraint firstItem="gQZ-TY-ceW" firstAttribute="leading" secondItem="9qA-6V-rQ8" secondAttribute="leading" id="uJd-3h-RbC"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="gQZ-TY-ceW" id="YAf-kC-vC6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EDg-MW-ZWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="752.79999999999995" y="725.48725637181417"/>
         </scene>
         <!--Image Select View Controller-->
         <scene sceneID="cq0-Nt-BFI">
@@ -369,6 +336,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKD-go-A1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2769" y="-224"/>
+        </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="eXo-0K-dpR">
+            <objects>
+                <viewController storyboardIdentifier="Comment" id="CFr-oJ-HA9" customClass="CommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pkx-DV-8fh"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Or-TU-NHS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q3Q-EA-qv1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="コメント入力" borderStyle="line" placeholder="コメント入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QJP-75-BHY">
+                                <rect key="frame" x="38" y="162" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="c1D-dA-tQO"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="handleCommentButton:" destination="CFr-oJ-HA9" eventType="editingDidEnd" id="iIu-yB-KoU"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGK-ZJ-qdV">
+                                <rect key="frame" x="37" y="193" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="kVb-hA-uA4"/>
+                                </constraints>
+                                <state key="normal" title="コメント投稿" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleLoginButton:" destination="CFr-oJ-HA9" eventType="touchUpInside" id="2wD-nb-OZU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oGK-ZJ-qdV" firstAttribute="top" secondItem="QJP-75-BHY" secondAttribute="bottom" constant="10" id="75s-Xr-S5f"/>
+                            <constraint firstItem="6Or-TU-NHS" firstAttribute="top" secondItem="oGK-ZJ-qdV" secondAttribute="bottom" constant="434" id="EWZ-ot-xBt"/>
+                            <constraint firstItem="oGK-ZJ-qdV" firstAttribute="top" secondItem="QJP-75-BHY" secondAttribute="bottom" constant="10" id="V1H-tA-oSb"/>
+                            <constraint firstItem="QJP-75-BHY" firstAttribute="centerX" secondItem="Q3Q-EA-qv1" secondAttribute="centerX" id="i3r-sx-Jp7"/>
+                            <constraint firstItem="oGK-ZJ-qdV" firstAttribute="centerX" secondItem="Q3Q-EA-qv1" secondAttribute="centerX" id="jdz-I4-cOa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentTextField" destination="QJP-75-BHY" id="555-qP-b58"/>
+                        <outlet property="displayNameTextField" destination="QJP-75-BHY" id="iQ4-gy-JOn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u5B-Ty-4A3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753" y="791"/>
         </scene>
     </scenes>
     <resources>

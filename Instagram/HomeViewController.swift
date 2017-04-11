@@ -60,7 +60,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     }
                     
                 })
-                //いいねの数が増えた時(要素が変更されたら)該当データをpostArrayから一度削除したとに新たなデータを追加して　TableViewに再表示
+                //いいねの数が増えた時(要素が変更されたら)該当データをpostArrayから一度削除し新たなデータを追加して　TableViewに再表示
                 postsRef.observe(.childChanged, with:{snapshot in
                     print("DEBUG_PRINT: .childCahndeイベントが発生しました")
                     
@@ -175,10 +175,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
     }
-    
-    
-}
-
+   
+   
 
 
 /*
@@ -190,5 +188,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
  // Pass the selected object to the new view controller.
  }
  */
+}
 
 

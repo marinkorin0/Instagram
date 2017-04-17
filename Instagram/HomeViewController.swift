@@ -124,12 +124,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //cellのアクションを、ソースコードで設定
         cell.likeButton.addTarget(self, action:#selector(handleButton(sender:event:)), for:  UIControlEvents.touchUpInside)
         
-        
         //コメント用．cellのアクションをソースコードで設定
         cell.commentButton.addTarget(self, action: #selector(handleCommentButton(sender:event:)), for: .touchUpInside)
-        
-        
-        
         
         return cell
     }
@@ -195,15 +191,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // 配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
-        
-        override func prepare(for: <#T##UIStoryboardSegue#>, sender: <#T##Any?#>)
-        // segueから遷移先のcommentViewControllerを取得する
+    }
+    
+    override func prepare(for: <#T##UIStoryboardSegue#>, sender: <#T##Any?#>){
+                // segueから遷移先のcommentViewControllerを取得する
         let commentViewController:CommentViewController = segue.destination as! CommentViewController
         //遷移先のcommentViewControllerで宣言しているpostData型
         var postData: PostData!
     }
+    
+}
 
-    
-    
-    }
+
+
 

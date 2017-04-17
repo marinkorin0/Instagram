@@ -139,7 +139,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="iDw-4i-7m9" id="1ox-nk-qPu"/>
-                        <segue destination="CFr-oJ-HA9" kind="show" identifier="showCommentPage" id="RA0-4p-pOH"/>
+                        <segue destination="CFr-oJ-HA9" kind="showDetail" identifier="showCommentPage" action="showViewController:sender:" id="RA0-4p-pOH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRr-cJ-nSm" userLabel="First Responder" sceneMemberID="firstResponder"/>

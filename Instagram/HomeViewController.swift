@@ -62,7 +62,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 })
                 //いいねの数が増えた時(要素が変更されたら)該当データをpostArrayから一度削除し新たなデータを追加して　TableViewに再表示
                 postsRef.observe(.childChanged, with:{snapshot in
-                    print("DEBUG_PRINT: .childCahndeイベントが発生しました")
+                    print("DEBUG_PRINT: .childChangedイベントが発生しました")
                     
                     //PostDataクラスを生成して受け取ったデータを設定する
                     if let uid = FIRAuth.auth()?.currentUser?.uid {
@@ -124,6 +124,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //cellのアクションを、ソースコードで設定
         cell.likeButton.addTarget(self, action:#selector(handleButton(sender:event:)), for:  UIControlEvents.touchUpInside)
         
+        
+        //コメント用．cellのアクションをソースコードで設定
+        cell.commentButton.addTarget(self, action: #selector(handleCommentButton(sender:event:)), for: .touchUpInside)
+        
+        
+        
+        
         return cell
     }
     
@@ -138,22 +145,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    
     // cell内のボタンがタップされた時のアクション
     func handleButton(sender: UIButton, event:UIEvent) {
         print("DEBUG_PRINT: likeボタンがタップされました。")
+        
         
         // タップされたcellのインデックスを求める
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
         
-        // 配列からタップされたインデックスのデータを取り出す
+        // タップされた列のインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
         
         // Firebaseに保存するデータの準備
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             if postData.isLiked {
-                // すでにいいね済みは、いいねを解除するためIDを除去
+                // すでにいいねをしていた場合はいいねを解除するためIDを取り除く
                 var index = -1
                 for likeId in postData.likes {
                     if likeId == uid {
@@ -166,28 +175,35 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             } else {
                 postData.likes.append(uid)
             }
-            
-            // 増えたlikesをFirebaseに保存する
-            let postRef = FIRDatabase.database().reference().child(Const.PostPath).child(postData.id!)
-            let likes = ["likes": postData.likes]
-            postRef.updateChildValues(likes)
-            
         }
         
+        // 増えたlikesをFirebaseに保存する
+        let postRef = FIRDatabase.database().reference().child(Const.PostPath).child(postData.id!)
+        let likes = ["likes": postData.likes]
+        postRef.updateChildValues(likes)
+        
     }
-   
-   
 
+    // コメント用　cell内のボタンがタップされた時のアクション
+    func handleCommentButton(sender: UIButton, event:UIEvent) {
+        print("DEBUG_PRINT: commentボタンがタップされました。")
+        
+        // タップされたcellのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+        
+        override func prepare(for: <#T##UIStoryboardSegue#>, sender: <#T##Any?#>)
+        // segueから遷移先のcommentViewControllerを取得する
+        let commentViewController:CommentViewController = segue.destination as! CommentViewController
+        //遷移先のcommentViewControllerで宣言しているpostData型
+        var postData: PostData!
+    }
 
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destinationViewController.
- // Pass the selected object to the new view controller.
- }
- */
-}
-
+    
+    
+    }
 

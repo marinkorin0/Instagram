@@ -19,7 +19,7 @@ class PostData: NSObject {
     var date: NSDate?
     var likes: [String] = []
     var isLiked: Bool = false
-    var comment: String?//コメント用に足しましたー
+    
    
     
     
@@ -39,9 +39,7 @@ class PostData: NSObject {
         let time = valueDictionary["time"] as? String
         self.date = NSDate(timeIntervalSinceReferenceDate: TimeInterval(time!)!)
       
-        //コメント用に足しましたー
-        self.comment = valueDictionary["comment"]as? String
-        
+                
         
         //isLikedプロパティだけはFIRDataSnapshotから取り出すのではなくlikesでString型配列から取り出します．
         if let likes = valueDictionary["likes"] as? [String]{

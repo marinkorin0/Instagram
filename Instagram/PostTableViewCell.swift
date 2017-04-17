@@ -8,11 +8,7 @@
 
 import UIKit
 
-//protcol viewcontrollerの上でcellなどをdelegateする時、このほかのviewcontrollerからこのdelegateを呼び出せるようにする．
-protocol PostTableViewCellDelegate {
-    //コメントボタンが押された時、
-    func commentButton_Clicked(post: PostData)
-}
+
 
 class PostTableViewCell: UITableViewCell {
     
@@ -21,26 +17,26 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
-   //コメント用に足しました．
+    //コメント用に足しました．
     @IBOutlet weak var commentButton: UIButton!
     
     //
-    var delegate: PostTableViewCellDelegate!
-        
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     func setPostData(postData: PostData){
         self.postImageView.image = postData.image
         
-    
+        
         //キャプションラベルには、名前とキャプションを表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         
@@ -73,12 +69,14 @@ class PostTableViewCell: UITableViewCell {
         }
         
         
+        func setPostData(postData: PostData){
+            
+            //キャプションラベルには、名前とキャプションを表示
+            self.captionLabel.text = "(postData.caption)\n\(postData.name!) : \(postData.caption!)"
+            
+            
         }
-    
-  
-
-       
-    
+        
     }
     
-
+}
